@@ -32,9 +32,9 @@ const TaskForm = ({ selectedTask, fetchTasks, clearSelectedTask }) => {
     e.preventDefault();
     try {
       if (selectedTask) {
-        await axios.put(`http://localhost:5000/tasks/${selectedTask._id}`, formData, config);
+        await axios.put(`https://taskmanager-ge9o.onrender.com/tasks/${selectedTask._id}`, formData, config);
       } else {
-        await axios.post('http://localhost:5000/tasks', formData, config);
+        await axios.post('https://taskmanager-ge9o.onrender.com/tasks', formData, config);
       }
       fetchTasks();
       clearSelectedTask();

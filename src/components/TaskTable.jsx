@@ -10,13 +10,13 @@ const config = {
 const TaskTable = ({ tasks, onUpdate, selectTask }) => {
  
   const handleDelete = async (id) => {
-    await axios.delete(`http://localhost:5000/tasks/${id}`, config);
+    await axios.delete(`https://taskmanager-ge9o.onrender.com/tasks/${id}`, config);
     onUpdate();
   };
   
   const toggleComplete = async (task) => {
     await axios.put(
-      `http://localhost:5000/tasks/${task._id}`,
+      `https://taskmanager-ge9o.onrender.com/tasks/${task._id}`,
       { ...task, completed: !task.completed },
       config
     );
